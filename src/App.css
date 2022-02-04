@@ -1,7 +1,10 @@
 .App {
   text-align: center;
+  margin: 0, 5rem, 0, 0;
+  height: 100rem;
+  background: black;
+  color: white;
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +38,34 @@
   to {
     transform: rotate(360deg);
   }
+}
+.startButton {
+  font-size: 2rem;
+}
+input[type="radio"] {
+  appearance: none;
+  border: 1px solid rgb(185, 27, 27);
+  width: 10px;
+  height: 10px;
+  content: none;
+  outline: none;
+  box-shadow: rgba(26, 4, 228, 0.24) 0px 3px 8px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+input[type="radio"]:checked {
+  appearance: none;
+  outline: none;
+  content: none;
+  border: green;
+}
+
+input[type="radio"]:checked::before {
+  position: absolute;
+  color: green !important;
+  content: "\00A0\2713\00A0" !important;
+  border: 1px solid #d3d3d3;
+  font-weight: bolder;
+  font-size: 10px;
 }

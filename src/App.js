@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { useState } from "react";
+import Axios from "axios";
+import Activity from "./components/Activity";
 function App() {
+  const [showActivity, setShowActivity] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <h1>Activity Application</h1>
+
+      {!showActivity ? (
+        <button
+          onClick={() => {
+            setShowActivity(!showActivity);
+          }}
         >
-          Learn React
-        </a>
-      </header>
+          Start application
+        </button>
+      ) : (
+        <Activity />
+      )}
     </div>
   );
 }
-
 export default App;
